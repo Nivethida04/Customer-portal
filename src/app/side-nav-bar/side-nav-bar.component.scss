@@ -150,7 +150,7 @@
   width: var(--sidebar-width);
   background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 50%, #5a0f0f 100%);
   color: var(--white);
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-md) 0;
   height: calc(100vh - var(--navbar-height));
   position: fixed;
   top: var(--navbar-height);
@@ -194,7 +194,7 @@
 .sidebar a {
   display: flex;
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-lg);
   margin: var(--spacing-xs) var(--spacing-md);
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
@@ -271,7 +271,7 @@
 
 /* Dropdown Styles */
 .dropdown {
-  margin: var(--spacing-sm) var(--spacing-md);
+  margin: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--radius-md);
   background: transparent;
   color: rgba(255, 255, 255, 0.9);
@@ -287,7 +287,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-lg);
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition);
@@ -322,7 +322,7 @@
 .dropdown.open .dropdown-list {
   max-height: 300px;
   opacity: 1;
-  padding-top: var(--spacing-sm);
+  padding-top: var(--spacing-xs);
 }
 
 .dropdown-list {
@@ -347,7 +347,7 @@
   display: flex;
   align-items: center;
   font-size: var(--font-size-sm);
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-xs) var(--spacing-lg);
   margin: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--radius);
   transition: var(--transition);
@@ -395,12 +395,12 @@
 
 /* Logout Button */
 .logout {
-  margin: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+  margin: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
   padding: 0 var(--spacing-md);
 }
 
 .logout .btn {
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   width: 100%;
   font-weight: 600;
   font-size: var(--font-size-base);
@@ -483,7 +483,7 @@
 /* Content Area */
 .content {
   margin-left: var(--sidebar-width);
-  padding: calc(var(--navbar-height) + var(--spacing-xl)) var(--spacing-xl) var(--spacing-xl);
+  padding: calc(var(--navbar-height) + var(--spacing-lg)) var(--spacing-lg) var(--spacing-lg);
   min-height: 100vh;
   transition: var(--transition);
   background: linear-gradient(135deg, var(--light-gray) 0%, #f0f2f5 100%);
@@ -500,15 +500,16 @@
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23f8f9fa' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
   pointer-events: none;
   z-index: -1;
+  transition: var(--transition);
 }
 
 .main-landing {
   background: var(--white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  padding: var(--spacing-xl);
+  padding: var(--spacing-lg);
   min-height: calc(100vh - var(--navbar-height) - var(--spacing-2xl));
-  max-width: var(--container-max-width);
+  max-width: 100%;
   margin: 0 auto;
   transition: var(--transition);
   position: relative;
@@ -532,6 +533,10 @@
 
 .content.sidebar-closed::before {
   left: 0;
+}
+
+.content.sidebar-closed .main-landing {
+  max-width: 100%;
 }
 
 .sidebar.closed {
@@ -588,7 +593,7 @@
   }
   
   .main-landing {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
   
   .nav-icon span {
@@ -620,7 +625,7 @@
   }
   
   .main-landing {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
     border-radius: var(--radius);
   }
 }
